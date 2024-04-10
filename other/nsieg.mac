@@ -1,0 +1,20 @@
+reset() $ 
+derivabbrev : false $
+fpprec : 16 $ 
+simp : true $ 
+
+Q : sqrt(1 - q^2);
+x(t0,t1)      :=  ce * t0 + se * t1;
+y(t0,t1)      := -se * t0 + ce * t1;
+
+alphax(t0,t1) := b * q / Q * atan(Q * x(t0,t1) / (psi(t0,t1) + s)) $
+alphay(t0,t1) := b * q / Q * atanh(Q * y(t0,t1) / (psi(t0,t1) + q^2 * s)) $
+
+dxt0 : subst(qp, Q, subst(x, x(t0,t1), subst(y, y(t0,t1), diff(alphax(t0,t1),t0))));
+dxt1 : subst(qp, Q, subst(x, x(t0,t1), subst(y, y(t0,t1), diff(alphax(t0,t1),t1))));
+dyt0 : subst(qp, Q, subst(x, x(t0,t1), subst(y, y(t0,t1), diff(alphay(t0,t1),t0))));
+dyt1 : subst(qp, Q, subst(x, x(t0,t1), subst(y, y(t0,t1), diff(alphay(t0,t1),t1))));
+
+psi(t0,t1)    := sqrt( q^2 * ( s^2 + x(t0,t1)^2 ) + y(t0,t1)^2 ) $
+dpsit0 : subst(psi, psi(t0,t1), subst(x, x(t0,t1), subst(y, y(t0,t1), diff(psi(t0,t1),t0)))) $
+dpsit1 : subst(psi, psi(t0,t1), subst(x, x(t0,t1), subst(y, y(t0,t1), diff(psi(t0,t1),t1)))) $

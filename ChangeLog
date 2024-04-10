@@ -1,0 +1,58 @@
+2022-11-07
+  * Add missing 'extern' keywords in constant fields from the treealgorithm.h file that are implemented in the treealgorithm.c file
+  * Release 1.0.13
+
+2020-10-26
+  * Fix a bug while passing the -B option to the split program
+  * Release 1.0.12
+
+2020-05-14
+	* Updated description of the NSIEG lens model in the simulation program
+	* Release 1.0.11
+
+2020-02-06
+	* Add a --buffer option to the xmatch executable, allowing to store the HTM db in file rather than in memory
+	* htmdb now uses the pheap_malloc and pheap_calloc functions in order to reduce memory consumption
+	* Release 1.0.10
+
+2019-10-21
+	* Add a timeout value in threadpool_cancel if wait == -1
+	* Release 1.0.9
+
+2019-09-24
+	* Add option --nthread to the cluster program
+	* Release 1.0.8
+
+2019-06-11
+	* Add option --max-parent-size to the cluster program
+	* Release 1.0.7
+
+2019-06-03
+	* In cluster program, input lines starting with a '!' will be ignored for building clusters byt will be used for estimating the field density
+	* Release 1.0.6
+
+2019-05-28
+	* Passing "-" as input to xmatch will read coordinates from stdin
+	* Release 1.0.5
+
+2019-05-21
+	* Fixed bug in the gal2icrs_process function (should use the transpose of the transformation matrix used in the icrs2gal_process function)
+	* Release 1.0.4
+
+2018-11-23
+	* contaminant program now produce uniform points in a circle, rather than in a square
+	* In cluster program, input lines starting with a '*' will be ignored for cluster building but taken into account for the estimation of the density around each cluster
+	* Release 1.0.3
+
+2018-08-30
+  * Added graddlsqr header, source file and test case
+  * Added split program
+  * Realease 1.0.2
+
+2018-04-20
+  * Use of pheap inside tree.c functions so as to lower memory consumption
+  * Intergration of the ert program
+  * Release 1.0.1
+
+2018-03-09
+  * Initial release 1.0.0

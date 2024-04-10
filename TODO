@@ -1,0 +1,24 @@
+- Implement an ANN program that optimize an artificial neural network through backpropagation
+	The topology file should look like this
+	(0,0) sig(2)
+	(1,0) tanh(5) <- (0,0) 1.58
+	(1,1) sig(3)  <- (0,0) 0.25
+	(2,1) sig(1)  <- (1,0) 1.00, (1,1) 1.00
+	Format is the following:
+	(x,y) fct(arg) <- (x0,y0) w0, ...
+	where (x,y)    is the position of the perpectron in the network
+	      fct(arg) is the activation function to use with the given parameter(s)
+	      (x0,y0)  is the input this perceptron receive from neuron at (x0,y0)
+	      w0       is the initial weight associated with the (x0,y0) input
+
+Allow input coordinates of the form Jhhmmss+ddmmss.
+
+xmatch
+------
+ 	- Add --degree and --radian options specifying which unit is used by default
+ 	- Add the possibility to do a cross match with different radius for each observation
+
+cluster
+-------
+ 	- Allow a "--buffer" option, storing input lines in a temporary file rather than in memory
+  - Compute the cluster size and difference in colours as output
